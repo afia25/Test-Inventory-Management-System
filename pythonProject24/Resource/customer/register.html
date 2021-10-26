@@ -1,0 +1,88 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    .register-form{
+    border:1px;
+    padding:10 px;
+    box-shadow:5px 10px #888888;
+    }
+</style>
+
+
+<div class="container register-form" style="padding-left:10%; padding-right:10%;">
+    <!--<div class="register-form" style="margin-bottom:10%;">-->
+
+        <form method="POST" action="{% url 'register' %}">
+        <legend class="form-group border-bottom pb=-4">Sign up</legend>
+        {% csrf_token %}
+        <fieldset class="form-group">
+
+            {{ form | crispy }}
+            <!--{{ profileform | crispy }}-->
+
+            <label for="usertype">User Type :</label>
+          <select id="usertype" name="usertype">
+            <option value="Customer" name="usertype1">Customer</option>
+            <option value="Admin" name="usertype2">Admin</option>
+            <option value="Employee" name="usertype3">Employee</option>
+
+          </select>
+
+        </fieldset>
+
+
+
+        <!--<form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+          <label for="usertype">User Type :</label>
+          <select id="usertype" name="usertype">
+            <option value="Admin">Admin</option>
+            <option value="Customer">Customer</option>
+            <option value="Employee">Employee</option>
+
+          </select>
+          <input type="submit">
+        </form>-->
+
+
+       <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+             <div class="submit">
+                  <button class="form-group btn btn-outline-info" type="submit" name="button">
+                      Sign up
+
+                 </button>
+
+             </div>
+
+        </form>
+    <div style="padding-bottom:15%" class="border-top pt=-4">
+        Alredy have an account?<a href="{% url 'login' %}">Sign in</a> here.
+    </div>
+
+</div>
+
+<div>
+    <br>
+    <br>
+</div>
+
+{% endblock %}

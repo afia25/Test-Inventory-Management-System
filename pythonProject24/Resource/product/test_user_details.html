@@ -1,0 +1,84 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}
+User Details
+{% endblock %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body id="bg" style="background-image:url('{% static 'customer/items/back5.jpg' %}')";>
+
+
+      <form action="{% url 'test_user_details' %}">
+        <label for="name">Name:</label>&#8202 &#8202&#8202 &#8202&#8202 &#8202&#8202&#8202 &#8202&#8202&#8202 &#8202&#8202&#8202 &#8202&#8202&#8202 &#8202&#8202&#8202 &#8202&#8202&#8202 &#8202
+        <input type="text" id="name" name="name" value="Nova Tasnuba"><br>
+        <label for="cid">Customer ID:</label>&#8202&#8202 &#8202&#8202&#8202 &#8202&#8202&#8202 &#8202&#8202&#8202 &#8202
+        <input type="text" id="cid" name="cid" value="208"><br>
+        <label for="delivery">Delivery Address:</label>&#8202&#8202 &#8202
+        <input type="text" id="delivery" name="delivery" value="46/C, Asad Avenue, Mohammadpur, Dhaka-1207"><br>
+        <label for="contact">Contact Number:</label>&#8202&#8202 &#8202
+        <input type="text" id="contact" name="contact" value="01967834899"><br>
+        <label for="pay">Payment Method:</label>&#8202&#8202 &#8202
+        <input type="text" id="pay" name="pay" value="Cash on Delivery"><br><br>
+
+        <div class="submit">
+                  <button class="form-group btn btn-outline-info" type="submit" name="user_details_button">
+                      Submit
+
+                 </button>
+
+             </div>
+      </form>
+
+
+
+  <!--<form method="POST">
+
+        {% csrf_token %}
+        <fieldset class="form-group">
+
+            {{ userdetailsform | crispy }}
+
+        </fieldset>
+             <div class="submit">
+                  <button class="form-group btn btn-outline-info" type="submit">
+                      Submit
+
+                 </button>
+
+             </div>
+
+        </form>-->
+
+
+</body>
+<style>
+    #bg{
+    background-size: 1400px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment:fixed;
+
+    }
+
+</style>
+</html>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
